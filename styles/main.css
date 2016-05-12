@@ -1,0 +1,208 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: gray;
+	}
+	
+hr{
+	margin: 0;
+	}
+#main{
+	width: 100%;
+	}
+#header{
+	text-align: center;
+	background-color: #000;
+	}
+#header h1, #header p{
+	margin: 0;
+	}
+#topmenu{
+	font-size: 150%;
+	width: 100%;
+	text-align: left;
+	padding-left: 15px;
+	}
+.right{
+	text-align: right;
+	}
+.right table{
+	float: right;
+	}
+#content{
+	width: 100%;
+	}
+#content td{
+	vertical-align: top;
+}
+.article {
+	text-align: center;
+	border: 1px solid #000;
+	}
+#banners_240{
+	width: 240px;
+}
+#footer p{
+	text-align: center;
+	color: white;
+	}
+#footer {
+	background-color: #000;
+  }
+#body p{
+	float: left;
+	}
+.logo{
+	float: left;
+	padding-left: 15px;
+	width: 100px;
+	}
+.genre p{
+	font-weight: bolder;
+	}
+.about_films{
+	font-weight: bold;
+	}
+.about_films, .genre p{
+	margin-left:260px;
+	text-align: left;
+	}
+#left_menu {
+	width: 200px;
+	}
+#left_menu ul {
+    margin: 0;
+    padding: 0px;
+   }
+#left_menu ul li {
+    margin-top: 3px;
+    border: 2px solid #000;
+    padding: 3px;
+   }
+a {
+	color:#000;
+	text-decoration: none;
+}
+a:active {
+	color:#000;
+	text-decoration: none;
+}
+a:visited {
+	color:#000;
+	text-decoration: none;
+}
+a:hover {
+	color:#999;
+	text-decoration: none;
+}
+#topmenu ul {
+    margin: 0;
+    padding: 4px;
+   }
+#topmenu ul li {
+    display: inline;
+    margin-right: 15px;
+    padding: 3px;
+   }
+.show_full{
+	border: 2px solid #000;
+	border-radius: 10px;
+	width: 130px;
+	padding: 5px;
+	}
+	
+/* feedback */
+form .row {
+display: block;
+padding: 7px 8px;
+margin-bottom: 7px;
+}
+
+form label {
+display: inline-block;
+font-size: 1.2em;
+font-weight: bold;
+width: 120px;
+padding: 6px 0;
+color: #464646;
+vertical-align: top;
+}
+form .req { color: #ca5354; }
+
+form .note {
+font-size: 1.2em;
+line-height: 1.33em;
+font-weight: normal;
+padding: 2px 7px;
+margin-bottom: 10px;
+}
+
+form input:focus, form textarea:focus { 
+	outline: none;
+	}
+
+/* placeholder styles: http://stackoverflow.com/a/2610741/477958 */
+::-webkit-input-placeholder { color: #aaafbd; font-style: italic; } /* WebKit */
+:-moz-placeholder { color: #aaafbd; font-style: italic; } /* Mozilla Firefox 4 to 18 */
+::-moz-placeholder { color: #aaafbd; font-style: italic; } /* Mozilla Firefox 19+ */
+:-ms-input-placeholder { color: #aaafbd; font-style: italic; } /* Internet Explorer 10+ */
+
+form .txt {
+display: inline-block;
+padding: 8px 9px;
+padding-right: 30px;
+width: 140px;
+font-family: 'Oxygen', sans-serif;
+font-weight: normal;
+color: #898989;
+}
+
+#navbar {
+margin: 0;
+padding: 10px;
+list-style-type: none;
+width: 100px;
+}
+
+#navbar a {
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+#error {
+	color: red;
+	font-weight: bolder;
+	font-size: 30px;
+	padding-left: 15px;
+}
+
+.art {
+	display:inline-block;
+	float:left;
+	text-align: center;
+	margin: 5px;
+	
+	 
+	   
+}
+
+.art b {
+	font-size: 16px;
+}
+.art sup {
+	margin-left: 5px;
+	padding: 15px;
+	font-size: 12px;
+}
+.art td {
+	width: 250px;
+	border: 1px solid;
+	margin: 0 10px;
+    padding: 10px;
+    height: 320px;
+    background: #A9A9A9;
+    overflow: auto;
+	
+}
