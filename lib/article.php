@@ -126,7 +126,10 @@ class Article {
 	public static function getAllByCateg(){
 		global $db;
 		$id = intval($_GET['categ_id']);
-		$query = "SELECT * FROM category_articles WHERE categ_id = '$id'";
+		$query = "SELECT a.*"
+			. " FROM category_articles as ca"
+				. " INNER JOIN articles AS a ON ca.art_id = a.id"
+			. " WHERE ca.categ_id = '$id'";
 		$articleArr = $db->query($query);
 		if (is_array($articleArr)) {
 			$articles = array();
