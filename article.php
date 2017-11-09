@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>13films</title>
+	<title>NewFilm</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/style.css"/>
 	
@@ -13,7 +13,7 @@
 	<div id="wrapper">
 		<div id="top">
 			<div id="logo">
-				<h1><a href="#">FilmLife</a></h1>
+				<h1><a href="/index.php">NewFilm</a></h1>
 			</div>
 			<div id="auth">
 				<?php

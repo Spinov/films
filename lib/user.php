@@ -118,9 +118,9 @@ class User {
         }
 		$pass = md5(md5($string));
 			
-		$title = 'Востановления пароля пользователю '.$login.' для сайта 13films.ru!';
-        $letter = 'Вы запросили восстановление пароля для аккаунта '.$login.' на сайте 13films.ru '
-				. '\r\nВаш новый пароль: '.$string.'\r\nС уважением админестрация сайта 13films.ru';
+		$title = 'Востановления пароля пользователю '.$login.' для сайта NewFilm!';
+        $letter = 'Вы запросили восстановление пароля для аккаунта '.$login.' на сайте NewFilm '
+				. '\r\nВаш новый пароль: '.$string.'\r\nС уважением админестрация сайта NewFilm';
 		if (mail($email, $title, $letter, "Content-type:text/plain; Charset=windows-1251\r\n")) {
 			
 		$query = "UPDATE users SET password = '$pass' WHERE login = '$login'";

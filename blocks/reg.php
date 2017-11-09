@@ -1,12 +1,8 @@
 <?php session_start();
 
-if ($_SESSION['secpic'] == strtolower($_POST['secpic'])) {
-	include_once PATH_LIB.'/user.php';
-	User::addUser($login, $email, $password_1, $password_2, $vopros, $otvet);
-}
-elseif (!empty($_POST["button_reg"])){
-	echo 'Введите правильно защитное изображение!';
-}
+    include_once PATH_LIB.'/user.php';
+    User::addUser($login, $email, $password_1, $password_2, $vopros, $otvet);
+
 ?>
 <h2>Регистрация</h2>
 <form name="reg" action="" method="post">
@@ -45,14 +41,6 @@ elseif (!empty($_POST["button_reg"])){
 			<td>Ответ:</td>
 			<td>
 				<input type="text" name="otvet" placeholder="красный" required/>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<img src="secpic.php" alt="защитный код" kasperskylab_antibanner="on"/>
-			</td>
-			<td>
-				<input type="text" name="secpic"/>
 			</td>
 		</tr>
 		<tr>

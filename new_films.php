@@ -13,7 +13,7 @@
 	<div id="wrapper">
 		<div id="top">
 			<div id="logo">
-				<h1><a href="#">FilmLife</a></h1>
+				<h1><a href="/index.php">NewFilm</a></h1>
 			</div>
 			<div id="auth">
 				<?php
