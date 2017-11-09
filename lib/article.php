@@ -81,6 +81,33 @@ class Article {
 		}
 		return FALSE;
 	}
+	public static function getAllpag() {
+		global $db;
+		
+		$per_page = 3;
+		$cur_page = 1;
+			if (isset($_GET['page']) && $_GET['page'] > 0) {
+				$cur_page = $_GET['page'];
+			}
+		$start = ($cur_page - 1) * $per_page;
+		$query = "SELECT * FROM articles LIMIT $start,$per_page";
+
+		$articleArr = $db->query($query);
+		if (is_array($articleArr)) {
+			$articles = array();
+			foreach ($articleArr as $article) {
+				$articles[] = new Article ($article['id'], $article['new_film'], $article['title'], $article['posters'],
+											$article['intro_text'],	$article['full_text'], $article['year'],
+											$article['country'], $article['time'], $article['date'], $article['producer'],
+											$article['roles'], $article['trailer'], $article['film']);
+			}
+			$num_rows = count($articles);
+			$num_pages = ceil($num_rows / $per_page);
+			
+			return (count($articles) > 0) ? $articles : FALSE; 
+		}
+		return FALSE;
+	}
 	
 	public static function getOne($id)	{
 		global $db;
@@ -276,4 +303,60 @@ class Article {
 			}
 		}
 	}
+}
+
+
+Class Comment {
+	
+	private $id;
+	private $art_id;
+	private $name;
+	private $comment;
+	private $date;
+
+
+	public function id() { return $this->id; }
+	public function art_id() { return $this->art_id; }
+	public function name() { return $this->name; }
+	public function comment() { return $this->comment; }
+	public function date() { return $this->date; }
+	
+	public function __construct($id, $art_id, $name, $comment, $date) {
+		$this->id = $id;
+		$this->art_id = $art_id;
+		$this->name = $name;
+		$this->comment = $comment;
+		$this->date = $date;
+	}
+	
+	
+	public static function GetComment($get){
+		global $db;
+		$art_id = $_GET['id'];
+		$query = "SELECT * FROM comments WHERE art_id = '$art_id'";
+		$commentArr = $db->query($query);
+			if (is_array($commentArr)) {
+				$comments = array();
+				foreach ($commentArr as $comment) {
+					$comments[] = new Comment($comment['id'], $comment['art_id'], $comment['name'],
+											$comment['comment'], $comment['date'], $comment['avatar']);
+				}
+				return (count($comments) > 0) ? $comments : FALSE; 
+			}
+			return FALSE;
+	}
+	
+	public static function AddComment($comments){
+		global $db;
+		$art_id = $_GET['id'];
+		$name = htmlspecialchars($_POST['name']);
+		$avatar = htmlspecialchars($_POST['avatar']);
+		$comment = htmlspecialchars($_POST['comment']);
+		$date = date("d.m.Y", time());
+		if ($_POST) {
+			$query = "INSERT INTO comments (art_id, name, avatar, comment, date) VALUES ('$art_id', '$name', '$avatar', '$comment', '$date')";
+		$db->query($query, FALSE);
+		}
+	}
+	
 }

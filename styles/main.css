@@ -200,9 +200,43 @@ width: 100px;
 	width: 250px;
 	border: 1px solid;
 	margin: 0 10px;
-    padding: 10px;
-    height: 320px;
-    background: #A9A9A9;
-    overflow: auto;
+        padding: 10px;
+        height: 320px;
+        background: #A9A9A9;
+        overflow: auto;
 	
+}
+#reg, #forget td {
+	vertical-align: bottom;
+}
+
+.comment, .addcomment table {
+	width: 700px;
+	border: 3px inset #808080;
+	text-align: left;
+	border-radius: 10px;
+	margin: 5px auto;
+}
+#avatar{
+	padding-left: 10px;
+	padding-right: 10px;
+	
+}
+.addcomment td{
+	padding-top: 20px;
+	padding-left: 10px;
+}
+#addcomment p{
+	min-height: 100px;
+	padding-left: 15px;
+}
+.addcomment textArea{
+	resize: none;
+}
+#full_user {
+	border: 5px inset slategray ;
+	border-radius: 11px;
+	width: 200px;
+	float: right;
+	padding-right: 12px;
 }

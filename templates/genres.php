@@ -23,36 +23,55 @@ Genre::insert($genres);
 
 $genres = Genre::getAll();
 ?>
-<form action="#" method="POST">
-<table border="1" align="center" width="200px">
-	<tr>
-		<th>id</th>
-		<th>name</th>
-		<th>del</th>
-	</tr>
-	<?php
-		if (is_array($genres) && (count($genres) > 0)){
-			foreach ($genres as $genre) {
-	?>
-	<tr>
-		<td><?= $genre->id()?></td>
-		<td><input type="text" name="up<?=$genre->id()?>" value="<?=$genre->name()?>"/></td>
-		<td><input type="checkbox" name="del[]" value="<?=$genre->id()?>"/></td>
-	</tr>
-	<?php
-			}
-		}
-	?>
-	<?php for ($i = 0; $i < $numNew; $i++){ ?>
-	<tr>
-		<td>+</td>
-		<td><input type="text" name="add<?=$i?>"/></td>
-		<td>&nbsp;</td>
-	</tr>
-	<?php } ?>
-	<tr>
-		<td colspan="3" align="center"><input type="submit" name="add" value="Сохранить"/></td>
-	</tr>
-</table>
-</form>
+<?php
+include_once PATH_LIB.'/article.php';
+include_once PATH_LIB.'/genre.php';
+
+Article::del();
+
+$articles = Article::getAll();
+?>
+<div id="admin-content">
+    <form action="#" method="POST">
+	<table align="center" width="200px">
+	    <tr>
+		    <th>id</th>
+		    <th>name</th>
+		    <th>del</th>
+	    </tr>
+	    <?php
+		    if (is_array($genres) && (count($genres) > 0)){
+			    foreach ($genres as $genre) {
+	    ?>
+	    <tr>
+		    <td><?= $genre->id()?></td>
+		    <td><input type="text" name="up<?=$genre->id()?>" value="<?=$genre->name()?>"/></td>
+		    <td><input type="checkbox" name="del[]" value="<?=$genre->id()?>"/></td>
+	    </tr>
+	    <?php
+			    }
+		    }
+	    ?>
+	    <?php for ($i = 0; $i < $numNew; $i++){ ?>
+	    <tr>
+		    <td>+</td>
+		    <td><input type="text" name="add<?=$i?>"/></td>
+		    <td>&nbsp;</td>
+	    </tr>
+	    <?php } ?>
+	    <tr>
+		    <td colspan="3" align="center"><input type="submit" name="add" value="Сохранить"/></td>
+	    </tr>
+	</table>
+    </form>
+</div>
+<div id="admin-sidebar">
+		
+</div>
+<div id="admin-footer">		
+			<?php
+				require_once"../blocks/footer.php";
+			?>
+</div>
+
 

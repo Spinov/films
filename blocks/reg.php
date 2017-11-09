@@ -1,10 +1,16 @@
-<?php
-include_once PATH_LIB.'/user.php';
-User::addUser($login, $email, $password_1, $password_2);
+<?php session_start();
+
+if ($_SESSION['secpic'] == strtolower($_POST['secpic'])) {
+	include_once PATH_LIB.'/user.php';
+	User::addUser($login, $email, $password_1, $password_2, $vopros, $otvet);
+}
+elseif (!empty($_POST["button_reg"])){
+	echo 'Введите правильно защитное изображение!';
+}
 ?>
 <h2>Регистрация</h2>
 <form name="reg" action="" method="post">
-	<table>
+	<table id="reg">
 		<tr>
 			<td>Логин:</td>
 			<td>
@@ -30,8 +36,29 @@ User::addUser($login, $email, $password_1, $password_2);
 			</td>
 		</tr>
 		<tr>
+			<td>Секретный вопрос:</td>
+			<td>
+				<input type="text" name="vopros" placeholder="любимый цвет" required/>
+			</td>
+		</tr>
+		<tr>
+			<td>Ответ:</td>
+			<td>
+				<input type="text" name="otvet" placeholder="красный" required/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="secpic.php" alt="защитный код" kasperskylab_antibanner="on"/>
+			</td>
+			<td>
+				<input type="text" name="secpic"/>
+			</td>
+		</tr>
+		<tr>
 			<td colspan="2">
 				<input type="submit" name="button_reg" value="Зарегистрироваться"/>
 			</td>
 		</tr>
 	</table>
+</form>

@@ -33,7 +33,7 @@
 	<div id="page" class="container">
 		<div id="content">
 			<?php
-				require_once "blocks/reg.php";
+				require_once "blocks/profile.php";
 			?>
 		</div>
 		<div id="sidebar">

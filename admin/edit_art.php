@@ -7,4 +7,4 @@ $content = ob_get_contents();
 ob_end_clean();
 
 include_once PATH_TPL.'/page.php';
-phpinfo(INFO_VARIABLES);
+//phpinfo(INFO_VARIABLES);

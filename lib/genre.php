@@ -77,6 +77,24 @@ class Genre {
 				$db->query($query, FALSE);
 			}
 	}
+	
+		public static function getAllCateg($get){
+		global $db;
+		$art_id = $_GET['id'];
+		$query = "SELECT ca.*"
+			. " FROM categories as ca"
+				. " INNER JOIN category_articles AS a ON a.categ_id = ca.id"
+			. " WHERE a.art_id = '$art_id'";
+		$genreArr = $db->query($query);
+		if (is_array($genreArr)) {
+			$genres = array();
+			foreach ($genreArr as $genre) {
+				$genres[] = new Genre ($genre['id'], $genre['name']);
+			}
+			return (count($genres) > 0) ? $genres : FALSE; 
+		}
+		return FALSE;
+	}
 }
 
 
